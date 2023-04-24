@@ -15,7 +15,7 @@ Developed in:
 * Bootstrap
 ## Installation
 ***
-A little intro about the installation. 
+About the installation. 
 ```
 $ source venv/bin/activate
 $ pip install -r requirements.txt
