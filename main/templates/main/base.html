@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" href="style.css"> {% endcomment %}
+    <title>{% block title %}Minimarket{% endblock %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        
+        .category-card {
+            width: 45vw;
+        }
+
+        a.linked-card {
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    
+    {% block navbar %}
+        {% include 'main/navbar.html' %}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+ 
+    {% block scripts %}
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+	<nav class="navbar bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'home' %}">
+				<img src="{% static 'main/back-button.png' %}" alt="Logo" width="25" height="25" class="d-inline-block align-text-top">
+			</a>
+			<div class="d-flex">
+				<h2>{{ category_name|title }}</h2>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <p class="fs-1">{{ product }}</p>
+            </div>
+            <div class="col-4">
+                <p class="fs-2">$ {{ product.price }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p class="lead">{{ product.description }}</p>
+            </div>
+        </div>
+       
+        <div class="row text-center mt-2">
+            <div class="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-danger">-</button>
+                    <button type="button" class="btn btn-outline-secondary" disabled>0</button>
+                    <button type="button" class="btn btn-success" id="btn-add">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- todo: agregar a sessions un diccionario con toda la informacion referente al pedido cuando presionan en + -->
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script>
+        let btnAdd = document.getElementById("btn-add");
+        btnAdd.click( function() {
+            // hacer fetch 
+        })
+    </script>
+    
+{% endblock %}
